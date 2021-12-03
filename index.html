@@ -63,6 +63,13 @@
     }
 
     async function getFriendship() {
+      const friend = await liff.getFriendship()
+      document.getElementById("friendship").append(friend.friendFlag)
+      if (!friend.friendFlag) {
+        if (confirm("ยังไม่ได้เป็นเพื่อน เพิ่มเพื่อน?")) {
+          window.location = "https://lin.ee/E10tbwC"
+        }
+      }
     }
 
     async function sendMsg() {
@@ -115,7 +122,7 @@
       getEnvironment()
       getUserProfile()
       getContext()
-      // getFriendship()
+      getFriendship()
       // createUniversalLink()
     }
     main()
