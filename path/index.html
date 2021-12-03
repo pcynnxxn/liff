@@ -13,7 +13,7 @@
   <p id="userId"><b>userId:</b> </p>
   <p id="displayName"><b>displayName:</b> </p>
   <p id="statusMessage"><b>statusMessage:</b> </p>
-  <p id="decodedIDToken"><b>email:</b> </p>
+  <!-- <p id="decodedIDToken"><b>email:</b> </p> -->
   <script>
     // Query Params
     const queryString = decodeURIComponent(window.location.search);
@@ -21,7 +21,7 @@
     document.getElementById("param").append(params.get("param"));
   </script>
 
-  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
 
   <script>
     async function getUserProfile() {
@@ -35,7 +35,7 @@
     async function main() {
       // alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "1656640287-km6Zo3PP" })
-      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
+      // document.getElementById("isLoggedIn").append(liff.isLoggedIn())
       if (liff.isLoggedIn()) {
         getUserProfile()
       } else {
